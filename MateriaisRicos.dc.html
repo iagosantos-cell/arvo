@@ -26,7 +26,7 @@
   <section style="background:#0D0D10;background-image:radial-gradient(ellipse 115% 92% at 50% 0%, rgba(144,43,41,0.82) 0%, rgba(144,43,41,0.34) 45%, transparent 85%);padding:160px 40px 80px;">
     <div style="max-width:1160px;margin:0 auto;">
       <span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#FF4A2E;margin-bottom:22px;">Conteúdos · Materiais Ricos</span>
-      <h1 style="font-size:clamp(38px,5vw,64px);font-weight:700;letter-spacing:-0.035em;line-height:1.05;color:#F0EFEB;max-width:880px;margin:0;">Artigos, ebooks, webinars e workshops para quem cuida da <em style="font-style:italic;font-family:'Playfair Display',Georgia,serif;color:#E5C8C5;font-weight:400;">saúde da operadora.</em></h1>
+      <h1 style="font-size:clamp(38px,5vw,64px);font-weight:700;letter-spacing:-0.035em;line-height:1.05;color:#F0EFEB;max-width:880px;margin:0;">Artigos, ebooks e webinars para quem cuida da <em style="font-style:italic;font-family:'Playfair Display',Georgia,serif;color:#E5C8C5;font-weight:400;">saúde da operadora.</em></h1>
       <p style="font-size:clamp(16px,1.8vw,20px);font-weight:400;color:rgba(240,239,235,0.62);line-height:1.6;max-width:640px;margin:24px 0 0;">Conhecimento aplicado sobre integridade de pagamentos, auditoria em escala e inteligência de dados no setor de saúde.</p>
     </div>
   </section>
@@ -39,7 +39,6 @@
         <button type="button" onClick="{{ filterArtigo }}" style="{{ chipArtigo }}">Artigos</button>
         <button type="button" onClick="{{ filterEbook }}" style="{{ chipEbook }}">Ebooks</button>
         <button type="button" onClick="{{ filterWebinar }}" style="{{ chipWebinar }}">Webinars</button>
-        <button type="button" onClick="{{ filterWorkshop }}" style="{{ chipWorkshop }}">Workshops</button>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
@@ -69,9 +68,12 @@ class Component extends DCLogic {
     { type:'artigo', typeLabel:'Artigo', target:'_self', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/6882aac5542ba3c43b4732c8_blogpost-saude-nada-artificial.avif') center/cover", title:'Setor de saúde suplementar discute o futuro com IA', desc:'Evento “Saúde Nada Artificial”, da Arvo e do Google Cloud, debateu caminhos para eficiência sem ruptura.', cta:'Ler artigo →', url:'Artigo.dc.html?a=setor-ia' },
     { type:'artigo', typeLabel:'Artigo', target:'_self', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/6862e3cf2b752bf2ed72b661_blogpost-RN%20623%3A2024.avif') center/cover", title:'RN 623/2024: o que muda e os impactos para operadoras', desc:'Como a nova norma da ANS eleva a exigência por eficiência, transparência e centralidade no cuidado.', cta:'Ler artigo →', url:'Artigo.dc.html?a=rn-623' },
     { type:'artigo', typeLabel:'Artigo', target:'_self', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/681136f0d8d9f07a84be332c_blogpost--header-artigo.avif') center/cover", title:'5 benefícios do uso de tecnologia na auditoria de operadoras', desc:'Entenda as melhorias proporcionadas dentro da área de auditoria de operadoras de saúde.', cta:'Ler artigo →', url:'Artigo.dc.html?a=5-beneficios' },
-    { type:'ebook', typeLabel:'Ebook', target:'_blank', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/680acf97513c5e83578c8cc7_Frame%201410103624.avif') center/cover", title:'5 Erros invisíveis na Auditoria Médica e como a IA pode te ajudar', desc:'Com o apoio de IESS e ABRAMGE, este eBook reúne os 5 erros invisíveis mais comuns na auditoria médica.', cta:'Fazer download →', url:'https://www.arvo.com.br/ebook-5erros-invisiveis' },
-    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/680fb42dcc4064bb412dac16_Frame%201410103621.avif') center/cover", title:'Estratégia de Operações: como a inovação em auditoria pode impulsionar a qualidade assistencial', desc:'Bate-papo com Fabrício Valadão, dra. Goldete Priszkulnik e Werner Dalla na Semana da Saúde.', cta:'Assistir ao vídeo →', url:'https://www.arvo.com.br/webinar-semana-da-saude' },
-    { type:'workshop', typeLabel:'Workshop', target:'_blank', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/680fb42e60ef42fc020c1753_Frame%201410103623.avif') center/cover", title:'Erros Invisíveis: como a IA pode ser sua lupa na auditoria médica', desc:'Descubra como ter mais assertividade na análise de altos volumes de contas, com Rafael Tinoco e Fernanda Naira.', cta:'Assistir ao vídeo →', url:'https://www.arvo.com.br/erros-invisiveis-inscricao' },
+    { type:'ebook', typeLabel:'Ebook', target:'_blank', cover:"url('https://cdn.prod.website-files.com/63c08b822401871f2e814ff1/680acf97513c5e83578c8cc7_Frame%201410103624.avif') center/cover", title:'5 Erros invisíveis na Auditoria Médica e como a IA pode te ajudar', desc:'Com o apoio de IESS e ABRAMGE, este eBook reúne os 5 erros invisíveis mais comuns na auditoria médica.', cta:'Fazer download →', url:'assets/ebook-5-erros-invisiveis.pdf' },
+    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://img.youtube.com/vi/CuqCzhDHowY/hqdefault.jpg') center/cover", title:'Erros Invisíveis: como a IA pode ser sua lupa na auditoria médica', desc:'Como ter mais assertividade na análise de altos volumes de contas médicas com o apoio da inteligência artificial.', cta:'Assistir ao vídeo →', url:'https://youtube.com/live/CuqCzhDHowY?feature=share' },
+    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://img.youtube.com/vi/s3cF8tASHBM/hqdefault.jpg') center/cover", title:'Operações e o impacto em saúde', desc:'Como a inovação em operações e auditoria impulsiona a qualidade assistencial e a eficiência das operadoras.', cta:'Assistir ao vídeo →', url:'https://youtube.com/live/s3cF8tASHBM?feature=share' },
+    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://img.youtube.com/vi/OmTEKnzEHQ8/hqdefault.jpg') center/cover", title:'Encaixando peças na saúde', desc:'Um debate sobre integração de dados, processos e inteligência na jornada da operadora de saúde.', cta:'Assistir ao vídeo →', url:'https://youtube.com/live/OmTEKnzEHQ8?feature=share' },
+    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://img.youtube.com/vi/uCfz2U6dwNk/hqdefault.jpg') center/cover", title:'Expansão sustentável', desc:'Os caminhos para crescer com sustentabilidade financeira e assistencial na saúde suplementar.', cta:'Assistir ao vídeo →', url:'https://youtube.com/live/uCfz2U6dwNk?feature=share' },
+    { type:'webinar', typeLabel:'Webinar', target:'_blank', cover:"url('https://img.youtube.com/vi/MH676RBPZjc/hqdefault.jpg') center/cover", title:'Codificação em auditoria em saúde', desc:'O papel da codificação correta na auditoria e no combate a desperdícios e pagamentos indevidos.', cta:'Assistir ao vídeo →', url:'https://youtube.com/live/MH676RBPZjc?feature=share' },
   ];
   renderVals() {
     const f = this.state.filter;
@@ -83,8 +85,8 @@ class Component extends DCLogic {
     };
     return {
       materials: f === 'todos' ? this.all : this.all.filter(m => m.type === f),
-      filterTodos: set('todos'), filterArtigo: set('artigo'), filterEbook: set('ebook'), filterWebinar: set('webinar'), filterWorkshop: set('workshop'),
-      chipTodos: chip('todos'), chipArtigo: chip('artigo'), chipEbook: chip('ebook'), chipWebinar: chip('webinar'), chipWorkshop: chip('workshop'),
+      filterTodos: set('todos'), filterArtigo: set('artigo'), filterEbook: set('ebook'), filterWebinar: set('webinar'),
+      chipTodos: chip('todos'), chipArtigo: chip('artigo'), chipEbook: chip('ebook'), chipWebinar: chip('webinar'),
     };
   }
 }
