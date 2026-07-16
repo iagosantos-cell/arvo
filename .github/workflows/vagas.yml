@@ -1,0 +1,80 @@
+name: Atualizar vagas (Teamtailor)
+
+# Roda de hora em hora, e também manualmente pelo botão "Run workflow"
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vagas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Buscar vagas na API do Teamtailor
+        env:
+          TT_TOKEN: ${{ secrets.TEAMTAILOR_TOKEN }}
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const token = process.env.TT_TOKEN;
+          const base = 'https://api.teamtailor.com/v1';
+          const headers = {
+            'Authorization': 'Token token=' + token,
+            'X-Api-Version': '20210218',
+            'Content-Type': 'application/vnd.api+json'
+          };
+
+          (async () => {
+            let url = base + '/jobs?filter[status]=published&include=department&page[size]=30';
+            const jobs = [];
+            const depts = {};
+
+            while (url) {
+              const res = await fetch(url, { headers });
+              if (!res.ok) {
+                console.error('Erro na API:', res.status, await res.text());
+                process.exit(1);
+              }
+              const body = await res.json();
+
+              // mapeia nomes de departamentos incluídos
+              (body.included || []).forEach(inc => {
+                if (inc.type === 'departments') depts[inc.id] = inc.attributes.name;
+              });
+
+              (body.data || []).forEach(j => {
+                const a = j.attributes || {};
+                const deptId = j.relationships && j.relationships.department
+                  && j.relationships.department.data && j.relationships.department.data.id;
+                jobs.push({
+                  title: a.title || 'Vaga',
+                  dept: (deptId && depts[deptId]) || 'Arvo',
+                  url: a['careersite-job-url'] || a['careersite-job-apply-url'] || (j.links && j.links.self) || 'https://arvo.teamtailor.com'
+                });
+              });
+
+              url = body.links && body.links.next ? body.links.next : null;
+            }
+
+            fs.writeFileSync('vagas.json', JSON.stringify(jobs, null, 2));
+            console.log('vagas.json gerado com', jobs.length, 'vaga(s).');
+          })();
+          EOF
+
+      - name: Commit do vagas.json (se mudou)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add vagas.json
+          if git diff --staged --quiet; then
+            echo "Nenhuma mudança nas vagas."
+          else
+            git commit -m "Atualiza vagas (Teamtailor)"
+            git push
+          fi
