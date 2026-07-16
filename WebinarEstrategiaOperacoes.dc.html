@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="responsive.css" />
+  <style>
+    body { margin:0; background:#0D0D10; -webkit-font-smoothing:antialiased; }
+    @media (max-width: 900px) {
+      .mat-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+      .mat-speakers { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" rx="20" fill="#902B29"/>
+      <path d="M42 36 L42 64 L66 50 Z" fill="#F0EFEB"/>
+    </svg>
+  </template>
+</helmet>
+
+<div style="font-family:'Space Grotesk',system-ui,sans-serif;background:#F5F1EA;color:#0D0D10;overflow-x:hidden;">
+
+  <div style="background:#5E1815;padding:20px clamp(24px,5vw,64px);display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
+    <a href="Home.dc.html" style="display:flex;align-items:center;text-decoration:none;">
+      <svg viewBox="0 0 947 368" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:28px;width:auto;display:block;">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M189.526 6.05698C175.538 -2.01899 158.304 -2.01899 144.315 6.05698L22.6059 76.3234C8.61726 84.3994 0 99.3245 0 115.476V255.702C0 271.855 8.61728 286.78 22.6059 294.855L144.315 365.121C146.242 366.234 148.231 367.194 150.264 368V259.288L109.604 235.459C108.648 235.027 107.681 234.456 106.728 233.775L106.46 233.617L106.464 233.583C102.29 230.5 98.4002 225.306 96.7309 220.117C95.4984 216.285 95.0691 212.595 96.1585 209.758C96.3722 209.201 96.6033 208.703 96.8492 208.259C99.5485 203.382 104.889 203.496 109.812 206.999L150.264 230.28V189.005C150.264 179.15 158.254 171.159 168.111 171.159C177.967 171.159 185.957 179.15 185.957 189.005V297.471L235.91 268.717C240.833 265.214 246.172 265.102 248.871 269.977C249.118 270.424 249.35 270.921 249.561 271.478C250.651 274.313 250.223 278.003 248.99 281.835C246.898 288.336 241.321 294.846 236.068 297.201L185.957 326.54V368C187.167 367.439 188.358 366.821 189.526 366.144L311.236 294.855C325.225 286.78 333.842 271.855 333.842 255.702V115.476C333.842 99.3245 325.225 84.3994 311.236 76.3234L189.526 6.05698ZM274.456 269.907C269.844 277.826 262.013 281.864 256.966 278.925C251.917 275.987 251.563 267.184 256.175 259.264C260.785 251.343 268.616 247.305 273.664 250.245C278.714 253.185 279.067 261.986 274.456 269.907Z" fill="#F0EFEB"/>
+        <path d="M440.672 267.636L484.484 100.363H539.248L583.06 267.636H550.677L541.629 230.836H482.103L473.055 267.636H440.672ZM489.484 201.683H534.248L514.009 120.197H509.723L489.484 201.683Z" fill="#F0EFEB"/>
+        <path d="M605.153 267.636V149.111H634.679V162.493H638.965C640.711 157.714 643.568 154.209 647.536 151.979C651.664 149.749 656.426 148.633 661.823 148.633H676.109V175.397H661.347C653.727 175.397 647.457 177.468 642.536 181.61C637.615 185.593 635.155 191.806 635.155 200.249V267.636H605.153Z" fill="#F0EFEB"/>
+        <path d="M725.513 267.636L687.892 149.111H719.798L747.18 245.652H751.466L778.848 149.111H810.755L773.134 267.636H725.513Z" fill="#F0EFEB"/>
+        <path d="M885.092 270.981C873.346 270.981 862.79 268.592 853.424 263.813C844.059 259.033 836.677 252.104 831.28 243.023C825.883 233.943 823.185 223.03 823.185 210.285V206.462C823.185 193.717 825.883 182.805 831.28 173.724C836.677 164.644 844.059 157.714 853.424 152.935C862.79 148.155 873.346 145.766 885.092 145.766C896.839 145.766 907.395 148.155 916.76 152.935C926.126 157.714 933.507 164.644 938.904 173.724C944.302 182.805 947 193.717 947 206.462V210.285C947 223.03 944.302 233.943 938.904 243.023C933.507 252.104 926.126 259.033 916.76 263.813C907.395 268.592 896.839 270.981 885.092 270.981ZM885.092 244.218C894.299 244.218 901.919 241.271 907.951 235.376C913.983 229.323 916.999 220.72 916.999 209.568V207.179C916.999 196.027 913.983 187.504 907.951 181.61C902.077 175.556 894.458 172.529 885.092 172.529C875.885 172.529 868.266 175.556 862.234 181.61C856.202 187.504 853.186 196.027 853.186 207.179V209.568C853.186 220.72 856.202 229.323 862.234 235.376C868.266 241.271 875.885 244.218 885.092 244.218Z" fill="#F0EFEB"/>
+      </svg>
+    </a>
+    <span style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(240,239,235,0.65);">Apoio</span>
+    <span style="font-size:16px;font-weight:700;letter-spacing:0.02em;color:#F0EFEB;">SBAM</span>
+  </div>
+
+  <section style="position:relative;background:linear-gradient(160deg, #CBBBA5 0%, #BBA890 100%);padding:clamp(48px,6vw,80px) clamp(24px,5vw,64px) clamp(64px,7vw,96px);border-radius:0 0 40px 40px;overflow:hidden;">
+    <div class="mat-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(32px,4vw,56px);align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px;">
+          <img src="assets/logo-semana-saude.png" alt="Semana da Saúde Arvo" style="height:44px;width:auto;display:block;" />
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:26px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5E1815;border:1px solid rgba(94,24,21,0.5);border-radius:100px;padding:7px 16px;">Webinar</span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5E1815;border:1px solid rgba(94,24,21,0.5);border-radius:100px;padding:7px 16px;">Online e gratuito</span>
+        </div>
+        <h1 style="font-size:clamp(34px,4.8vw,58px);font-weight:700;letter-spacing:-0.035em;line-height:1;color:#5E1815;margin:0;text-transform:uppercase;">Estratégia de Operações:</h1>
+        <p style="font-size:clamp(17px,2vw,22px);color:#3A2320;line-height:1.35;margin:20px 0 0;max-width:460px;">Como a inovação em auditoria pode impulsionar a qualidade assistencial.</p>
+      </div>
+      <div style="background:#F8F5EF;border-radius:20px;padding:clamp(28px,3vw,40px);box-shadow:0 30px 80px rgba(60,20,18,0.25);">
+        <div style="font-size:clamp(22px,2.4vw,28px);font-weight:700;color:#902B29;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px;text-align:center;">Acesse o conteúdo</div>
+        <p style="font-size:14px;color:#6B6B72;line-height:1.5;margin:0 0 22px;text-align:center;">Preencha as informações e acesse o material do webinar.</p>
+        <div id="hs-form-container"></div>
+        <p style="font-size:12px;color:#9A9AA0;line-height:1.5;margin:18px 0 0;text-align:center;">Ao continuar, você está de acordo com nossa <a href="PoliticaPrivacidade.dc.html" style="color:#902B29;text-decoration:none;font-weight:600;">Política de Privacidade</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F1EA;padding:clamp(56px,7vw,90px) clamp(24px,5vw,64px);">
+    <div style="max-width:760px;margin:0 auto;">
+      <h2 style="text-align:center;font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:#5E1815;margin:0 0 clamp(36px,4vw,48px);">Temas centrais do <em style="font-style:italic;font-family:'Playfair Display',Georgia,serif;font-weight:400;">encontro.</em></h2>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:#F8F5EF;border:1px solid rgba(144,43,41,0.3);border-radius:14px;padding:26px 30px;">
+          <div style="font-size:17px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;margin-bottom:6px;">Auditoria como alavanca estratégica</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:0;">Como auditoria baseada em dados e indicadores amplia a detecção de riscos e desperdícios.</p>
+        </div>
+        <div style="background:#F8F5EF;border:1px solid rgba(144,43,41,0.3);border-radius:14px;padding:26px 30px;">
+          <div style="font-size:17px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;margin-bottom:6px;">Saúde de ponta a ponta</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:0;">Como a busca e prevenção de não conformidades impacta na qualidade assistencial.</p>
+        </div>
+        <div style="background:#F8F5EF;border:1px solid rgba(144,43,41,0.3);border-radius:14px;padding:26px 30px;">
+          <div style="font-size:17px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;margin-bottom:6px;">Liderança que transforma</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:0;">Qual o papel da liderança na construção de uma saúde mais íntegra e focada na geração de valor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F1EA;padding:0 clamp(24px,5vw,64px) clamp(64px,7vw,100px);">
+    <div style="max-width:1000px;margin:0 auto;">
+      <h2 style="text-align:center;font-size:clamp(24px,3vw,38px);font-weight:700;letter-spacing:-0.03em;line-height:1.15;color:#5E1815;margin:0 0 clamp(40px,5vw,56px);">Quem participará dessa <em style="font-style:italic;font-family:'Playfair Display',Georgia,serif;font-weight:400;">conversa estratégica.</em></h2>
+      <div class="mat-speakers" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div style="text-align:center;">
+          <div style="font-size:19px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;">Dra. Goldete Priszkulnik</div>
+          <div style="font-size:13px;font-style:italic;font-weight:500;color:#6B6B72;margin-top:5px;">Vice-Presidente da SBAM</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:18px 0 22px;">Médica e executiva com ampla atuação em gestão, auditoria e regulação em saúde suplementar. Lidera a agenda de valorização da auditoria médica no Brasil.</p>
+          <img src="assets/sp-goldete.png" alt="Dra. Goldete Priszkulnik" style="width:150px;height:auto;display:block;margin:0 auto;" />
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:19px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;">Werner Dalla</div>
+          <div style="font-size:13px;font-style:italic;font-weight:500;color:#6B6B72;margin-top:5px;">Diretor Presidente Interino da Abertta Saúde</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:18px 0 22px;">Executivo com ampla experiência na gestão de operadoras, com foco em eficiência, inovação e entrega de valor.</p>
+          <img src="assets/sp-werner.png" alt="Werner Dalla" style="width:150px;height:auto;display:block;margin:0 auto;" />
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:19px;font-weight:700;color:#5E1815;letter-spacing:-0.01em;">Fabricio Valadão</div>
+          <div style="font-size:13px;font-style:italic;font-weight:500;color:#6B6B72;margin-top:5px;">Co-Fundador e CEO da Arvo</div>
+          <p style="font-size:14px;line-height:1.6;color:#6B6B72;margin:18px 0 22px;">Mais de 12 anos de experiência como consultor e executivo de saúde no Brasil e Latam, atuou em empresas como Bain &amp; Company e AON.</p>
+          <img src="assets/sp-fabricio.png" alt="Fabricio Valadão" style="width:150px;height:auto;display:block;margin:0 auto;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,440px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this.loadScript(); }
+  loadScript() {
+    if (window.hbspt) { this.makeForm(); return; }
+    if (!document.getElementById('hs-embed-v2')) {
+      const s = document.createElement('script');
+      s.id = 'hs-embed-v2';
+      s.src = 'https://js.hsforms.net/forms/embed/v2.js';
+      s.charset = 'utf-8';
+      s.onload = () => this.makeForm();
+      document.head.appendChild(s);
+    } else {
+      this._t = setTimeout(() => this.loadScript(), 150);
+    }
+  }
+  makeForm() {
+    if (this._made) return;
+    if (!window.hbspt || !document.getElementById('hs-form-container')) {
+      this._t = setTimeout(() => this.makeForm(), 150);
+      return;
+    }
+    this._made = true;
+    const css = 'body,.hs-form{font-family:"Space Grotesk",Arial,sans-serif;color:#0D0D10;}'
+      + '.hs-form-field{margin-bottom:14px;}'
+      + '.hs-form-field>label{display:block;margin-bottom:6px;font-size:13px;font-weight:600;color:#0D0D10;}'
+      + '.hs-form-field input,.hs-form-field select,.hs-form-field textarea,.hs-input{width:100%;box-sizing:border-box;font-size:14px;padding:11px 13px;border:1px solid rgba(13,13,16,0.18);border-radius:9px;background:#fff;color:#0D0D10;}'
+      + '.hs-input::placeholder{color:rgba(13,13,16,0.4);}'
+      + '.hs-button{width:100%;margin-top:8px;font-size:15px;font-weight:600;color:#F0EFEB;background:#902B29;border:none;border-radius:11px;padding:14px 26px;cursor:pointer;}'
+      + '.hs-button:hover{background:#a83230;}'
+      + '.hs-error-msg,.hs-error-msgs label{color:#c0392b;font-size:12px;}'
+      + '.legal-consent-container,.hs-richtext,.hs-richtext p,.hs-form-required{color:#6B6B72;font-size:12px;}'
+      + '.legal-consent-container a,a{color:#902B29;}';
+    window.hbspt.forms.create({ portalId: "40201694", formId: "c5666349-dd59-4831-9d46-81b233925256", region: "na1", target: "#hs-form-container", css: css });
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
