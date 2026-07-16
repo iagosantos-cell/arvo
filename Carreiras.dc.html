@@ -80,18 +80,12 @@
         <h2 style="font-size:clamp(28px,3.2vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.12;color:#0D0D10;margin:0;">Oportunidades <em style="font-style:italic;font-family:'Playfair Display',Georgia,serif;color:#902B29;font-weight:400;">abertas.</em></h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="https://arvo.teamtailor.com/jobs/7953049-data-scientist" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;border:1px solid rgba(13,13,16,0.08);border-radius:14px;padding:24px 28px;text-decoration:none;">
-          <div><div style="font-size:18px;font-weight:600;color:#0D0D10;letter-spacing:-0.01em;">Data Scientist</div><div style="font-size:13px;color:#6B6B72;margin-top:5px;">Dados &amp; Tecnologia</div></div>
-          <span style="font-size:13px;font-weight:600;color:#902B29;white-space:nowrap;">Candidatar →</span>
-        </a>
-        <a href="https://arvo.teamtailor.com/jobs/7805638-gerente-de-auditoria-medica" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;border:1px solid rgba(13,13,16,0.08);border-radius:14px;padding:24px 28px;text-decoration:none;">
-          <div><div style="font-size:18px;font-weight:600;color:#0D0D10;letter-spacing:-0.01em;">Gerente de Auditoria Médica</div><div style="font-size:13px;color:#6B6B72;margin-top:5px;">Operação Clínica</div></div>
-          <span style="font-size:13px;font-weight:600;color:#902B29;white-space:nowrap;">Candidatar →</span>
-        </a>
-        <a href="https://arvo.teamtailor.com/jobs/7165360-client-partner" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;border:1px solid rgba(13,13,16,0.08);border-radius:14px;padding:24px 28px;text-decoration:none;">
-          <div><div style="font-size:18px;font-weight:600;color:#0D0D10;letter-spacing:-0.01em;">Client Partner</div><div style="font-size:13px;color:#6B6B72;margin-top:5px;">Comercial</div></div>
-          <span style="font-size:13px;font-weight:600;color:#902B29;white-space:nowrap;">Candidatar →</span>
-        </a>
+        <sc-for list="{{ jobs }}" as="job" hint-placeholder-count="3">
+          <a href="{{ job.url }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff;border:1px solid rgba(13,13,16,0.08);border-radius:14px;padding:24px 28px;text-decoration:none;">
+            <div><div style="font-size:18px;font-weight:600;color:#0D0D10;letter-spacing:-0.01em;">{{ job.title }}</div><div style="font-size:13px;color:#6B6B72;margin-top:5px;">{{ job.dept }}</div></div>
+            <span style="font-size:13px;font-weight:600;color:#902B29;white-space:nowrap;">Candidatar →</span>
+          </a>
+        </sc-for>
       </div>
       <div style="margin-top:32px;padding:36px;background:rgba(144,43,41,0.06);border:1px solid rgba(144,43,41,0.18);border-radius:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
         <div><div style="font-size:18px;font-weight:600;color:#0D0D10;letter-spacing:-0.01em;">Não encontrou sua vaga?</div><div style="font-size:14px;color:#6B6B72;margin-top:5px;">Entre no nosso Banco de Talentos — estamos sempre de olho em quem vive na Arena.</div></div>
@@ -103,5 +97,29 @@
   <dc-import name="Footer" hint-size="100%,440px"></dc-import>
 </div>
 </x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  // Fallback usado até o vagas.json ser gerado pela GitHub Action
+  fallback = [
+    { title: "Data Scientist", dept: "Dados & Tecnologia", url: "https://arvo.teamtailor.com/jobs/7953049-data-scientist" },
+    { title: "Gerente de Auditoria Médica", dept: "Operação Clínica", url: "https://arvo.teamtailor.com/jobs/7805638-gerente-de-auditoria-medica" },
+    { title: "Client Partner", dept: "Comercial", url: "https://arvo.teamtailor.com/jobs/7165360-client-partner" },
+  ];
+  state = { jobs: null };
+  componentDidMount() {
+    fetch('vagas.json', { cache: 'no-cache' })
+      .then(r => { if (!r.ok) throw new Error('sem vagas.json'); return r.json(); })
+      .then(data => {
+        const list = Array.isArray(data) ? data : (data && data.jobs);
+        if (list && list.length) this.setState({ jobs: list });
+        else this.setState({ jobs: this.fallback });
+      })
+      .catch(() => this.setState({ jobs: this.fallback }));
+  }
+  renderVals() {
+    return { jobs: this.state.jobs || this.fallback };
+  }
+}
+</script>
 </body>
 </html>
