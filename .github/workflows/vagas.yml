@@ -55,7 +55,7 @@ jobs:
                 jobs.push({
                   title: a.title || 'Vaga',
                   dept: (deptId && depts[deptId]) || 'Arvo',
-                  url: a['careersite-job-url'] || a['careersite-job-apply-url'] || (j.links && j.links.self) || 'https://arvo.teamtailor.com'
+                  url: a['careersite-job-url'] || a['careersite-job-apply-url'] || ('https://arvo.teamtailor.com/jobs/' + j.id)
                 });
               });
 
