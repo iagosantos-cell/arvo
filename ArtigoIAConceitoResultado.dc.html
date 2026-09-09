@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="responsive.css" />
+  <style>
+    body { margin:0; background:#F0EFEB; -webkit-font-smoothing:antialiased; }
+    .artbody{font-family:'Space Grotesk',system-ui,sans-serif;color:#2A2A30;font-size:17px;line-height:1.78;}
+    .artbody p{margin:0 0 20px;}
+    .artbody h2{font-size:clamp(22px,2.4vw,28px);font-weight:700;color:#0D0D10;letter-spacing:-0.02em;margin:40px 0 14px;line-height:1.2;}
+    .artbody strong{color:#0D0D10;font-weight:700;}
+    .artbody em{font-style:italic;}
+    .artbody blockquote{margin:26px 0;padding:18px 24px;border-left:3px solid #902B29;background:rgba(144,43,41,0.05);font-style:italic;color:#3A3A40;border-radius:0 12px 12px 0;font-size:16px;}
+    .artbody a{color:#902B29;font-weight:600;text-decoration:underline;}
+  </style>
+</helmet>
+
+<div style="font-family:'Space Grotesk',system-ui,sans-serif;background:#F0EFEB;color:#0D0D10;overflow-x:hidden;">
+  <dc-import name="Nav" active="conteudos" hint-size="100%,68px"></dc-import>
+
+  <section style="background:#0D0D10;background-image:radial-gradient(ellipse 115% 92% at 50% 0%, rgba(144,43,41,0.6) 0%, rgba(144,43,41,0.14) 42%, transparent 80%);padding:150px 40px 64px;">
+    <div style="max-width:760px;margin:0 auto;">
+      <a href="MateriaisRicos.dc.html" style="font-size:13px;font-weight:600;color:rgba(240,239,235,0.55);text-decoration:none;display:inline-block;margin-bottom:28px;">← Voltar para Materiais Ricos</a>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#FF4A2E;">Artigo</span>
+        <span style="font-size:13px;color:rgba(240,239,235,0.5);">· 20/08/2026</span>
+      </div>
+      <h1 style="font-size:clamp(30px,4vw,46px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:#F0EFEB;margin:0;">IA na saúde suplementar: do conceito ao resultado</h1>
+      <p style="font-size:clamp(16px,1.8vw,19px);font-weight:400;color:rgba(240,239,235,0.62);line-height:1.55;margin:20px 0 0;">Painel reuniu executivos do setor para discutir a jornada de maturação de dados e o papel da inteligência artificial na integridade de pagamentos e na experiência do beneficiário.</p>
+    </div>
+  </section>
+
+  <div style="max-width:1000px;margin:-40px auto 0;padding:0 40px;position:relative;z-index:2;">
+    <img src="assets/artigo-ia-conceito-resultado.jpg" alt="" style="width:100%;height:clamp(220px,34vw,420px);object-fit:cover;border-radius:20px;border:1px solid rgba(13,13,16,0.1);box-shadow:0 30px 80px rgba(13,13,16,0.25);display:block;" />
+  </div>
+
+  <section style="background:#F0EFEB;padding:56px 40px 40px;">
+    <div class="artbody" style="max-width:760px;margin:0 auto;">
+      <p>Os últimos anos trouxeram avanços relevantes em tecnologia e IA em diversos setores da economia, inclusive na saúde. O desafio não é mais convencer o setor de que a tecnologia tem potencial para mudar o jogo, mas entender como transformar esse potencial em resultado de forma rápida, eficiente e segura, saindo da fase de experimentação e chegando ao resultado mensurável.</p>
+      <p>A saúde vive hoje uma jornada de transição tecnológica parecida com a que os bancos viveram entre 2010 e 2015: empresas com legado monolítico, regras de negócio dentro do banco de dados, informações que não circulavam entre sistemas. São desafios semelhantes aos que a saúde enfrenta hoje, que colocam o setor com um atraso estimado de dez a quinze anos em relação a quem já fez essa transição, justamente num momento em que margens apertadas tornam a eficiência operacional condição de sustentabilidade, não diferencial competitivo.</p>
+      <p>Foi esse o pano de fundo do painel <strong>Do conceito ao resultado: como a IA move receita</strong>, que contou com a participação de Luccas Adib (CEO da Hapvida) e Rodrigo Rocha (ex-Amil Dental), além de Fabricio Valadão (CEO e Cofundador da Arvo) para discutir, na prática, como transpor essa jornada.</p>
+      <p>Confira os aprendizados e insights trocados.</p>
+      <h2>A importância do tratamento dos dados</h2>
+      <p>Quando o assunto é o uso de ferramentas de IA em operações de saúde, o principal desafio da jornada de maturação das companhias é o tratamento dos dados internos, para que seja possível extrair deles os resultados desejados. Para Luccas Adib, CEO da Hapvida, essa jornada pode ser dividida em três frentes: o tratamento do input do dado, o recorte certo do banco de dados e a formação de quem constrói.</p>
+      <p>A primeira frente é o tratamento do próprio input do dado, antes mesmo de pensar em normalizar o banco.</p>
+      <blockquote>"Muita gente fala que tem um problema de normalização do banco. Mas o problema talvez esteja no dado não estruturado, na forma como o input está sendo gerado. Você pode tratar o seu banco do jeito que for, estruturar, normalizar, criar as chaves adequadas, e ele vai continuar sendo poluído por um input inadequado da informação." — Luccas Adib</blockquote>
+      <p>A segunda frente é o recorte certo do banco de dados. Segundo Adib, projetos param na frase "não temos o dado", quando a pergunta que falta fazer é "qual é o dado que eu preciso?".</p>
+      <p>Um exemplo prático: um agente de cobrança não precisa de informação clínica nem de histórico de utilização do beneficiário, e sim de endereço e histórico de pagamento - dados que quase sempre já existem.</p>
+      <p>A terceira e última frente é a formação de quem constrói. A Hapvida entendeu que apenas letrar as equipes em IA para que construíssem seus próprios agentes não era suficiente. A virada veio da alocação de profissionais com fluência em IA e conhecimento de negócio dentro das áreas de clientes, marketing e vendas digitais, com produto e engenharia segregados e governança mantida na tecnologia.</p>
+      <h2>Do piloto aos resultados reais</h2>
+      <p>Uma vez resolvido o desafio da estruturação da base de dados, a pergunta natural é: onde aplicar a Inteligência Artificial primeiro? De acordo com a experiência dos executivos do painel, existem algumas frentes nas quais o uso de IA já saiu do piloto e já gera resultados reais.</p>
+      <p>Do lado da assistência, os casos de uso concentram-se em apoio clínico, busca ativa de crônicos de alto custo e navegação conversacional do beneficiário. No apoio clínico, a transcrição em tempo real da consulta já gera a anamnese e devolve ao médico um protocolo estruturado. Na busca ativa, o critério é simples: cerca de 2% da população de beneficiários responde por 80% da despesa assistencial, e identificar esse grupo com antecedência é o que sustenta o retorno do investimento em prevenção.</p>
+      <p>Um exemplo prático: um piloto em teste pede ao beneficiário um áudio descrevendo o sintoma, pergunta se ele prefere atendimento perto de casa ou do trabalho, marca a consulta na janela possível e entrega o contexto ao médico antes do atendimento.</p>
+      <p>Do lado de operações e back-office, o ganho vem da mesma virada discutida antes: profissionais de negócio com fluência em IA, atuando dentro das próprias áreas, para automatizar tarefas repetitivas do dia a dia, como atendimento, faturamento, auditoria de contas e processos administrativos. São etapas que o beneficiário não vê diretamente, mas que definem a velocidade e a qualidade do atendimento que ele recebe.</p>
+      <h2>Integridade de pagamentos como base da sustentabilidade</h2>
+      <p>Para o setor de saúde suplementar, boa parte do desperdício financeiro está em um problema conhecido, mas historicamente difícil de atacar em escala: fraudes, erros, abusos e desperdícios consomem entre 16% e 20% da receita das operadoras. Recuperar essa fatia não é apenas ganho de margem, é o que viabiliza preço mais competitivo, crescimento de carteira e mais acesso à saúde privada, com alívio direto sobre o SUS.</p>
+      <p>Para Rodrigo Rocha, ex-Amil Dental, esse combate a fraudes e desperdícios é uma das duas frentes com maior potencial de transformação do setor. A outra é a democratização do acesso à saúde, viabilizada pelos wearables, por exemplo.</p>
+      <blockquote>"Quando você vê tecnologias que ajudam a diminuir fraude e abuso de serviço, isso é um bem imenso para o setor de saúde, porque você consegue ver o efeito na ponta: custo mais controlado, produtos melhores e mais acesso para a população brasileira." — Rodrigo Rocha</blockquote>
+      <h2>Conclusão</h2>
+      <p>O painel reforça um caminho prático para as operadoras que querem sair de projetos piloto e chegar ao resultado real com o uso da IA. Antes de investir em qualquer modelo, vale entender o problema que se busca resolver, e garantir que o dado utilizado para isso seja limpo.</p>
+      <p>Depois vem o ajuste de expectativa: em vez de esperar por uma base de dados perfeita, o caminho é escolher a fatia que aquele problema específico exige. E é nessa fatia que profissionais com conhecimento de negócio precisam estar construindo ao lado da tecnologia, não apenas operando uma ferramenta pronta.</p>
+      <p>Por fim, para dar velocidade a esse retorno, contar com parceiros especializados em saúde costuma ser mais rápido do que desenvolver essa capacidade inteiramente dentro de casa.</p>
+      <h2>Sobre a Arvo</h2>
+      <p>A Arvo é uma empresa especializada em Inteligência Artificial para integridade de pagamentos em saúde. Desde sua fundação, a empresa tem ajudado operadoras de saúde a garantir maior precisão e eficiência nos processos de auditoria, consolidando-se como referência no mercado e atingindo marcos como R$ 250 bilhões de despesa assistencial processadas.</p>
+    </div>
+  </section>
+
+  <section style="background:#F0EFEB;padding:20px 40px 100px;">
+    <div style="max-width:760px;margin:0 auto;background:#0D0D10;border-radius:20px;padding:44px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:55%;height:100%;background:radial-gradient(ellipse 90% 100% at 0% 50%, rgba(144,43,41,0.62) 0%, rgba(144,43,41,0.2) 45%, transparent 80%);pointer-events:none;"></div>
+      <div style="position:relative;z-index:1;"><div style="font-size:22px;font-weight:700;color:#F0EFEB;letter-spacing:-0.02em;line-height:1.2;">Quer ver isso na sua operação?</div><div style="font-size:14px;color:#6B6B72;margin-top:6px;">Fale com um de nossos especialistas.</div></div>
+      <a href="Home.dc.html#contato" style="position:relative;z-index:1;font-size:14px;font-weight:600;color:#F0EFEB;background:#902B29;padding:14px 26px;border-radius:11px;text-decoration:none;white-space:nowrap;">Falar com a Arvo</a>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,440px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>
