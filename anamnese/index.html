@@ -18,11 +18,13 @@ html{scroll-behavior:smooth}
 </style>
 <script src="//js.hsforms.net/forms/embed/v2.js"></script>
 <script>
-window.addEventListener("DOMContentLoaded", function () {
+(function waitForHbspt() {
   if (window.hbspt) {
     hbspt.forms.create({ portalId: "40201694", formId: "5e25307d-6feb-4e8f-9c4a-9d3f1e71f6f5", region: "na1", target: "#hs-form-container" });
+  } else {
+    setTimeout(waitForHbspt, 100);
   }
-});
+})();
 </script>
 <!-- HubSpot -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/40201694.js"></script>
