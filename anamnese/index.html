@@ -26,6 +26,14 @@ a{color:#902B29;text-decoration:none}a:hover{color:#642321}
 html{scroll-behavior:smooth}
 img{max-width:100%}
 .hs-form,.hs-form fieldset,.hs-form iframe{max-width:100% !important;width:100% !important;box-sizing:border-box}
+#hero-grid{grid-template-areas:"top form" "rest form"}
+#hero-top{grid-area:top}
+#hero-rest{grid-area:rest}
+#form{grid-area:form}
+@media (max-width:760px){
+  #hero-grid{grid-template-columns:1fr !important;grid-template-areas:"form" "top" "rest" !important}
+  #form{position:static !important}
+}
 </style>
 <script src="//js.hsforms.net/forms/embed/v2.js"></script>
 <script>
@@ -49,14 +57,16 @@ img{max-width:100%}
   </header>
 
   <section style="background:radial-gradient(58% 44% at 14% 10%, rgba(144,43,41,.72) 0%, rgba(144,43,41,0) 68%),radial-gradient(46% 38% at 88% 26%, rgba(255,74,46,.30) 0%, rgba(255,74,46,0) 70%),radial-gradient(64% 52% at 70% 92%, rgba(100,35,33,.60) 0%, rgba(100,35,33,0) 72%),#0D0D10;color:#F2EDE2;padding:clamp(40px,8vw,76px) clamp(20px,5vw,56px) clamp(48px,9vw,84px)">
-    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,6vw,64px);align-items:start">
+    <div id="hero-grid" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.25fr .85fr;gap:clamp(32px,6vw,64px);align-items:start">
 
-      <div>
+      <div id="hero-top">
         <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#FF4A2E;margin-bottom:26px">RELATÓRIO DE MERCADO · 15 ANOS DE DADOS DA ANS</div>
         <h1 style="margin:0;font-size:clamp(40px,8vw,76px);line-height:.98;font-weight:700;letter-spacing:-.025em">Anamnese de <em style="font-family:'IvyPresto Display',serif;font-weight:300;font-style:italic;color:#E5C8C5;font-size:clamp(44px,8.8vw,84px)">Mercado</em></h1>
         <h2 style="margin:20px 0 0;font-size:clamp(19px,4vw,26px);line-height:1.3;font-weight:400;color:#F2EDE2;max-width:620px;text-wrap:pretty">Um diagnóstico dos últimos 15 anos da Saúde Suplementar</h2><div style="height:1px;background:rgba(242,237,226,.22);margin:34px 0 26px"></div>
-        
-        <p style="margin:20px 0 0;font-size:clamp(15px,3.2vw,19px);line-height:1.55;font-weight:300;color:#C9C9CF;max-width:620px;text-wrap:pretty">Descubra os&nbsp;gargalos que corroem a eficiência do setor — e como transformar o discurso da Inteligência Artificial em margem real.&nbsp;</p>
+      </div>
+
+      <div id="hero-rest">
+        <p style="margin:0;font-size:clamp(15px,3.2vw,19px);line-height:1.55;font-weight:300;color:#C9C9CF;max-width:620px;text-wrap:pretty">Descubra os&nbsp;gargalos que corroem a eficiência do setor — e como transformar o discurso da Inteligência Artificial em margem real.&nbsp;</p>
 
         <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:34px">
           
