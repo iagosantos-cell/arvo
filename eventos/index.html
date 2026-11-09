@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Mapa de Eventos Arvo 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap">
+<style>
+:root{
+  --bg:#F0EFEB; --surface:#FFFFFF; --fg:#0D0D10; --muted:#6A6560; --line:rgba(13,13,16,0.10);
+  --accent:#902B29; --accent-soft:rgba(144,43,41,0.08); --brasa:#FF4A2E;
+  --p-criticas:#902B29; --p-auditoria:#B0822C; --p-tech:#2F7FC4; --p-ceo:#6C5CD1; --p-proprio:#3D3D44;
+  --ok:#2E8B5E; --warn:#A8741C; --none:#8A8580; --crit:#C9301F; --crit-soft:rgba(255,74,46,0.10); --warn-soft:rgba(200,154,60,0.14);
+  --display:"Space Grotesk", system-ui, sans-serif; --body:"Space Grotesk", system-ui, sans-serif; --mono:"Space Grotesk", system-ui, sans-serif;
+  --serif:"Playfair Display", Georgia, serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)} a:hover{color:var(--brasa)}
+.hero{position:relative;overflow:hidden;background:#0D0D10;color:#F0EFEB}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 46% 70% at 4% 0%,rgba(196,58,52,.55) 0%,transparent 62%),radial-gradient(ellipse 40% 80% at 100% 100%,rgba(196,58,52,.42) 0%,transparent 62%)}
+.hero .wrap{position:relative;padding-block:40px 44px}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:44px}
+.brand svg{height:30px;width:auto;display:block}
+.brand span{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,239,235,.55)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#F0EFEB;margin-bottom:16px}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brasa);box-shadow:0 0 0 5px rgba(255,74,46,.2)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:0 64px}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.4vw,60px);letter-spacing:-.035em;line-height:1;margin:0;text-wrap:balance}
+header h1 em{font-family:var(--serif);font-style:italic;font-weight:500;color:#EDE7DA}
+header p{color:rgba(240,239,235,.68);max-width:70ch;margin:18px 0 0;font-size:15.5px;text-wrap:pretty}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:30px 0 0}
+.stats span{display:flex;flex-direction:column;gap:4px;font-size:12px;line-height:1.3;color:rgba(240,239,235,.6);background:rgba(240,239,235,.05);border:1px solid rgba(240,239,235,.12);border-radius:12px;padding:12px 14px}
+.stats b{font-weight:700;color:#F0EFEB;font-size:26px;letter-spacing:-.02em;line-height:1}
+.stats span:first-child{background:rgba(144,43,41,.35);border-color:rgba(255,74,46,.4)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(240,239,235,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin:0 0 6px;padding:14px 0;display:flex;flex-direction:column;gap:8px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.row .lbl{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);margin-right:6px;min-width:80px}
+.chip{font:inherit;font-size:13px;font-weight:500;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:5px 12px;cursor:pointer;transition:border-color .15s,background .15s}
+.chip:hover{border-color:rgba(144,43,41,.4)}
+.chip[aria-pressed="true"]{background:var(--fg);color:#F0EFEB;border-color:var(--fg)}
+select.chip{padding-right:10px}
+.chip:focus-visible,.btn:focus-visible,input:focus-visible{outline:2px solid var(--brasa);outline-offset:2px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+input[type=search]{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:6px 14px;flex:1;min-width:0;max-width:340px}
+.btn{font:inherit;font-size:13px;font-weight:600;border:none;color:#F0EFEB;background:var(--accent);border-radius:999px;padding:7px 16px;cursor:pointer}
+.btn:hover{background:var(--brasa)}
+.count{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--muted);margin-left:auto}
+.month{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:34px 0;border-bottom:1px solid var(--line)}
+.month h2{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.02em;margin:0;position:sticky;top:210px;align-self:start}
+.month h2 small{display:block;font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--muted);margin-top:4px}
+.events{display:flex;flex-direction:column;gap:12px;min-width:0}
+.ev{display:grid;grid-template-columns:130px 1fr;gap:6px 20px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--pc);border-radius:14px;padding:16px 20px}
+.when{font-size:14px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.conf{display:block;font-size:11px;font-weight:600;letter-spacing:.04em;margin-top:4px}
+.conf.c{color:var(--ok)} .conf.e{color:var(--warn)} .conf.s{color:var(--none)}
+.ev h3{font-size:17px;font-weight:700;letter-spacing:-.01em;margin:3px 0 0;line-height:1.3}
+.ev h3 a{color:inherit;text-decoration:underline;text-decoration-color:rgba(144,43,41,.3);text-underline-offset:3px}
+.ev h3 a:hover{color:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--muted);margin-top:6px}
+.meta span+span::before{content:"·";margin-right:14px;margin-left:-8px;color:rgba(13,13,16,.25)}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pc)}
+.note{grid-column:2;font-size:13.5px;color:rgba(13,13,16,.75);margin:6px 0 0;max-width:74ch;padding-top:10px;border-top:1px dashed var(--line)}
+.empty{color:var(--muted);padding:40px 0}
+.legend{font-size:12.5px;color:var(--muted);margin-top:32px;max-width:84ch;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.legend b{color:var(--fg)}
+.due{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.due.now{background:var(--crit-soft);color:var(--crit)} .due.soon{background:var(--warn-soft);color:var(--warn)} .due.mid{background:var(--accent-soft);color:var(--accent)} .due.later{color:var(--muted);border:1px solid var(--line)}
+.urg{display:inline-block;margin-left:8px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--brasa);padding:2px 8px;border-radius:999px;vertical-align:1px}
+.ev.hot{box-shadow:0 0 0 1px rgba(255,74,46,.45),0 8px 24px rgba(144,43,41,.08)}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--fg);color:#F0EFEB;padding:10px 16px;border-radius:999px;font-size:13px}
+.foot{background:#0D0D10;color:rgba(240,239,235,.5);font-size:12px}
+.foot .wrap{padding-block:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.foot svg{height:24px;width:auto}
+@media (max-width:720px){
+  .month{grid-template-columns:1fr;gap:12px;padding:26px 0}
+  .month h2{position:static}
+  .ev{grid-template-columns:1fr;padding:14px 16px}
+  .note{grid-column:1}
+  .row .lbl{min-width:0;width:100%}
+  .brand{margin-bottom:30px}
+  .bar{position:static}
+}
+</style>
+</head>
+<body>
+
+<div class="hero"><div class="wrap">
+<div class="brand"><svg viewBox="0 0 947 368" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Arvo"><path fill-rule="evenodd" clip-rule="evenodd" d="M189.526 6.05698C175.538 -2.01899 158.304 -2.01899 144.315 6.05698L22.6059 76.3234C8.61726 84.3994 0 99.3245 0 115.476V255.702C0 271.855 8.61728 286.78 22.6059 294.855L144.315 365.121C146.242 366.234 148.231 367.194 150.264 368V259.288L109.604 235.459C108.648 235.027 107.681 234.456 106.728 233.775L106.46 233.617L106.464 233.583C102.29 230.5 98.4002 225.306 96.7309 220.117C95.4984 216.285 95.0691 212.595 96.1585 209.758C96.3722 209.201 96.6033 208.703 96.8492 208.259C99.5485 203.382 104.889 203.496 109.812 206.999L150.264 230.28V189.005C150.264 179.15 158.254 171.159 168.111 171.159C177.967 171.159 185.957 179.15 185.957 189.005V297.471L235.91 268.717C240.833 265.214 246.172 265.102 248.871 269.977C249.118 270.424 249.35 270.921 249.561 271.478C250.651 274.313 250.223 278.003 248.99 281.835C246.898 288.336 241.321 294.846 236.068 297.201L185.957 326.54V368C187.167 367.439 188.358 366.821 189.526 366.144L311.236 294.855C325.225 286.78 333.842 271.855 333.842 255.702V115.476C333.842 99.3245 325.225 84.3994 311.236 76.3234L189.526 6.05698ZM274.456 269.907C269.844 277.826 262.013 281.864 256.966 278.925C251.917 275.987 251.563 267.184 256.175 259.264C260.785 251.343 268.616 247.305 273.664 250.245C278.714 253.185 279.067 261.986 274.456 269.907Z" fill="#F0EFEB"/><path d="M440.672 267.636L484.484 100.363H539.248L583.06 267.636H550.677L541.629 230.836H482.103L473.055 267.636H440.672ZM489.484 201.683H534.248L514.009 120.197H509.723L489.484 201.683Z" fill="#F0EFEB"/><path d="M605.153 267.636V149.111H634.679V162.493H638.965C640.711 157.714 643.568 154.209 647.536 151.979C651.664 149.749 656.426 148.633 661.823 148.633H676.109V175.397H661.347C653.727 175.397 647.457 177.468 642.536 181.61C637.615 185.593 635.155 191.806 635.155 200.249V267.636H605.153Z" fill="#F0EFEB"/><path d="M725.513 267.636L687.892 149.111H719.798L747.18 245.652H751.466L778.848 149.111H810.755L773.134 267.636H725.513Z" fill="#F0EFEB"/><path d="M885.092 270.981C873.346 270.981 862.79 268.592 853.424 263.813C844.059 259.033 836.677 252.104 831.28 243.023C825.883 233.943 823.185 223.03 823.185 210.285V206.462C823.185 193.717 825.883 182.805 831.28 173.724C836.677 164.644 844.059 157.714 853.424 152.935C862.79 148.155 873.346 145.766 885.092 145.766C896.839 145.766 907.395 148.155 916.76 152.935C926.126 157.714 933.507 164.644 938.904 173.724C944.302 182.805 947 193.717 947 206.462V210.285C947 223.03 944.302 233.943 938.904 243.023C933.507 252.104 926.126 259.033 916.76 263.813C907.395 268.592 896.839 270.981 885.092 270.981ZM885.092 244.218C894.299 244.218 901.919 241.271 907.951 235.376C913.983 229.323 916.999 220.72 916.999 209.568V207.179C916.999 196.027 913.983 187.504 907.951 181.61C902.077 175.556 894.458 172.529 885.092 172.529C875.885 172.529 868.266 175.556 862.234 181.61C856.202 187.504 853.186 196.027 853.186 207.179V209.568C853.186 220.72 856.202 229.323 862.234 235.376C868.266 241.271 875.885 244.218 885.092 244.218Z" fill="#F0EFEB"/></svg><span>Planejamento de eventos</span></div>
+<header>
+  <div class="eyebrow">Planejamento 2027</div>
+  <h1>Mapa de Eventos <em>Arvo 2027</em></h1>
+  <p>Tudo o que a Arvo já fez, avaliou ou recebeu como sugestão (Slack, Notion e a lista do time), mais eventos do setor que ainda não estavam no radar. As datas de 2027 são confirmadas quando o organizador já publicou; nas demais, a estimativa segue a edição de 2026.</p>
+  <div class="stats" id="stats"></div>
+</header>
+</div></div>
+<div class="wrap">
+
+<div class="bar">
+  <div class="row" id="f-pilar"><span class="lbl">Pilar</span></div>
+  <div class="row"><span class="lbl">Foco</span><button class="chip" id="f-urg" type="button" aria-pressed="false"><span class="dot" style="background:var(--crit)"></span>Urgente: fechar até jan/27</button><button class="chip" id="f-ia" type="button" aria-pressed="false">★ Vitrine IA e tecnologia</button></div>
+  <div class="row" id="f-due"><span class="lbl">Fechar até</span></div>
+  <div class="row" id="f-mod"><span class="lbl">Modelo</span></div>
+  <div class="row" id="f-origem"><span class="lbl">Origem</span></div>
+  <div class="row">
+    <span class="lbl">Data</span>
+    <span id="f-conf" class="row"></span>
+    <select id="f-mes" class="chip" aria-label="Mês"><option value="">Todos os meses</option></select>
+    <input type="search" id="q" placeholder="Buscar evento, cidade, entidade…" aria-label="Buscar">
+    <button class="btn" id="copy" type="button">Copiar CSV</button>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main id="list"></main>
+
+<p class="legend"><b>Como ler:</b> “Confirmada” = data 2027 publicada pelo organizador. “Estimada” = mesma janela da edição 2026 (ou 2025), ainda sem anúncio. “A confirmar” = evento sem edição recente ou sem data pública. Prioridade 🔥 💧 🧊 vem das bases de Planejamento 2025/2026 do Notion; eventos novos aparecem como “a avaliar”. Os pilares seguem a divisão pedida para o planejamento ’27 (BU Críticas, BU Auditoria, Institucional Tecnologia, Institucional CEO) mais os eventos próprios. <b>Prazo de fechamento:</b> mês do evento menos a antecedência típica: 5 meses para eventos com estande disputado (convenções, congressos e simpósios Unimed/Unidas/Abramge, grandes feiras), 3 a 9 meses para eventos com chamada de palestra ou artigo (HIMSS, NeurIPS, BRACIS, GTC, Google Cloud, TDC) e 2 meses para os demais. Prazos que já passaram aparecem como “já”.</p>
+</div>
+<footer class="foot"><div class="wrap"><svg viewBox="0 0 947 368" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Arvo"><path fill-rule="evenodd" clip-rule="evenodd" d="M189.526 6.05698C175.538 -2.01899 158.304 -2.01899 144.315 6.05698L22.6059 76.3234C8.61726 84.3994 0 99.3245 0 115.476V255.702C0 271.855 8.61728 286.78 22.6059 294.855L144.315 365.121C146.242 366.234 148.231 367.194 150.264 368V259.288L109.604 235.459C108.648 235.027 107.681 234.456 106.728 233.775L106.46 233.617L106.464 233.583C102.29 230.5 98.4002 225.306 96.7309 220.117C95.4984 216.285 95.0691 212.595 96.1585 209.758C96.3722 209.201 96.6033 208.703 96.8492 208.259C99.5485 203.382 104.889 203.496 109.812 206.999L150.264 230.28V189.005C150.264 179.15 158.254 171.159 168.111 171.159C177.967 171.159 185.957 179.15 185.957 189.005V297.471L235.91 268.717C240.833 265.214 246.172 265.102 248.871 269.977C249.118 270.424 249.35 270.921 249.561 271.478C250.651 274.313 250.223 278.003 248.99 281.835C246.898 288.336 241.321 294.846 236.068 297.201L185.957 326.54V368C187.167 367.439 188.358 366.821 189.526 366.144L311.236 294.855C325.225 286.78 333.842 271.855 333.842 255.702V115.476C333.842 99.3245 325.225 84.3994 311.236 76.3234L189.526 6.05698ZM274.456 269.907C269.844 277.826 262.013 281.864 256.966 278.925C251.917 275.987 251.563 267.184 256.175 259.264C260.785 251.343 268.616 247.305 273.664 250.245C278.714 253.185 279.067 261.986 274.456 269.907Z" fill="#F0EFEB"/><path d="M440.672 267.636L484.484 100.363H539.248L583.06 267.636H550.677L541.629 230.836H482.103L473.055 267.636H440.672ZM489.484 201.683H534.248L514.009 120.197H509.723L489.484 201.683Z" fill="#F0EFEB"/><path d="M605.153 267.636V149.111H634.679V162.493H638.965C640.711 157.714 643.568 154.209 647.536 151.979C651.664 149.749 656.426 148.633 661.823 148.633H676.109V175.397H661.347C653.727 175.397 647.457 177.468 642.536 181.61C637.615 185.593 635.155 191.806 635.155 200.249V267.636H605.153Z" fill="#F0EFEB"/><path d="M725.513 267.636L687.892 149.111H719.798L747.18 245.652H751.466L778.848 149.111H810.755L773.134 267.636H725.513Z" fill="#F0EFEB"/><path d="M885.092 270.981C873.346 270.981 862.79 268.592 853.424 263.813C844.059 259.033 836.677 252.104 831.28 243.023C825.883 233.943 823.185 223.03 823.185 210.285V206.462C823.185 193.717 825.883 182.805 831.28 173.724C836.677 164.644 844.059 157.714 853.424 152.935C862.79 148.155 873.346 145.766 885.092 145.766C896.839 145.766 907.395 148.155 916.76 152.935C926.126 157.714 933.507 164.644 938.904 173.724C944.302 182.805 947 193.717 947 206.462V210.285C947 223.03 944.302 233.943 938.904 243.023C933.507 252.104 926.126 259.033 916.76 263.813C907.395 268.592 896.839 270.981 885.092 270.981ZM885.092 244.218C894.299 244.218 901.919 241.271 907.951 235.376C913.983 229.323 916.999 220.72 916.999 209.568V207.179C916.999 196.027 913.983 187.504 907.951 181.61C902.077 175.556 894.458 172.529 885.092 172.529C875.885 172.529 868.266 175.556 862.234 181.61C856.202 187.504 853.186 196.027 853.186 207.179V209.568C853.186 220.72 856.202 229.323 862.234 235.376C868.266 241.271 875.885 244.218 885.092 244.218Z" fill="#F0EFEB"/></svg><span>© 2027 Arvo · Uso interno</span></div></footer>
+
+<script>
+const PILAR={criticas:{n:"BU Críticas",c:"--p-criticas"},auditoria:{n:"BU Auditoria",c:"--p-auditoria"},tech:{n:"Inst. Tecnologia",c:"--p-tech"},ceo:{n:"Inst. Posicionamento CEO",c:"--p-ceo"},proprio:{n:"Evento próprio Arvo",c:"--p-proprio"}};
+const ORIG={lista:"Lista do time",slack:"Slack",notion:"Notion",novo:"Novo (pesquisa)"};
+const CONF={c:"Confirmada",e:"Estimada",s:"A confirmar"};
+const MES=["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+// m: mês 2027 (0 = sem mês) · d: data · cf: confiança · o: origem · p: pilar
+const E=[
+{m:1,d:"fim jan",cf:"e",n:"Health Innovation Fórum (HIF)",l:"Goiânia/GO",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026 foi 28–29/01. IA aplicada, interoperabilidade e governança clínica."},
+{m:1,d:"meados jan",cf:"e",n:"Encontro Abramge Ribeirão Preto",l:"Ribeirão Preto/SP",p:"proprio",o:"notion",h:"Feito em 2026",pr:"",nt:"Realizado em 16/01/2026 com associadas do interior."},
+{m:2,d:"fev",cf:"s",n:"Evento Arvo de abertura do ano + Webinar Autogestões",l:"SP / online",p:"proprio",o:"notion",h:"Feito em 2026",pr:"",nt:"2026: evento em 11/02 e webinar ‘Expansão Sustentável’ em 24/02."},
+{m:3,d:"início mar",cf:"e",n:"Jantar com a Nilo (MG)",l:"Belo Horizonte/MG",p:"criticas",o:"slack",h:"Feito em 2026",pr:"",nt:"Patrocínio exclusivo de R$ 2.500 em 05/03/2026, com 6 convites."},
+{m:3,d:"meados mar",cf:"e",n:"Almoço Casembrapa",l:"a definir",p:"proprio",o:"slack",h:"Feito em 2026",pr:"",nt:"17/03/2026."},
+{m:3,d:"meados mar",cf:"e",n:"Jantar de inovação Arvo + Mar Saúde + ISA Saúde",l:"São Paulo/SP",p:"proprio",o:"slack",h:"Feito em 2026",pr:"",nt:"18/03/2026, 60 convidados, custo do restaurante coberto pelos parceiros."},
+{m:3,d:"18–19/03",cf:"c",n:"KIC Health Brazil 2027",l:"Brasil (cidade a confirmar)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Conhecimento, inovação e comunicação em serviços de saúde (ISfTeH)."},
+{m:3,d:"fim mar",cf:"e",n:"ERP Summit",l:"São Paulo/SP",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"Foco em parcerias com ERPs/integradores. 2025: 24–25/03.",u:"https://erpsummit.com.br/"},
+{m:3,d:"mar",cf:"s",n:"Unimed Match Day",l:"online / a definir",p:"criticas",o:"lista",h:"Não ocorreu em 2025",pr:"🔥",nt:"Conexão de startups com o Sistema Unimed. Checar se volta em 2027."},
+{m:3,d:"14–17/03",cf:"c",n:"ViVE 2027",l:"EUA",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Referência internacional em saúde digital; benchmark para o time de produto."},
+{m:4,d:"início abr",cf:"e",n:"SUESC – Simpósio das Unimeds de SC",l:"Florianópolis/SC (Costão do Santinho)",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"2026: 09–12/04. Cota P (12 m²) estimada em R$150 mil no planejamento.",u:"https://eventosuesc.com.br/"},
+{m:4,d:"07/04",cf:"c",n:"Dia Mundial da Saúde (ação de conteúdo)",l:"digital",p:"proprio",o:"notion",h:"Feito em 2026",pr:"",nt:"Data fixa."},
+{m:4,d:"meados abr",cf:"e",n:"Simpósio Estadual de Auditoria em Saúde ABEA-RJ",l:"Rio de Janeiro/RJ",p:"auditoria",o:"slack",h:"Fomos em 2026",pr:"",nt:"2026: 10/04, com diretora da ANS. Gerou contato com o VP da Unimed Nova Iguaçu."},
+{m:4,d:"meados abr",cf:"e",n:"Seminário Unidas",l:"Brasília/DF",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"17º em 14–15/04/2026 (CICB). Estande não pode ser maior nem personalizado.",u:"https://17seminario.unidas.org.br/"},
+{m:4,d:"meados abr",cf:"e",n:"HBR Summit Brasil: Healthcare Management",l:"São Paulo/SP (Theatro Municipal)",p:"ceo",o:"slack",h:"Sugerido em 2026",pr:"",nt:"Fabricio apontou como ‘must have’ de thought leadership. 2026: 13–14/04."},
+{m:4,d:"abr",cf:"e",n:"2º Simpósio de Direito e Saúde Suplementar (Unimed Cerrado)",l:"Goiânia/GO",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"Previsto para abril de 2027, com a Escola da Magistratura de Goiás."},
+{m:4,d:"fim abr",cf:"e",n:"Convenção Técnica Unimed (ConTec)",l:"São Paulo/SP (Distrito Anhembi)",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"2026: 27–30/04 + jantar com a Nilo. Público técnico (auditoria, TI, operações). Cota G 24 m² ≈ R$280 mil."},
+{m:5,d:"04–07/05",cf:"c",n:"São Paulo Innovation Week",l:"São Paulo/SP (Pacaembu e FAAP)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Evento irmão do Rio Innovation Week."},
+{m:5,d:"início mai",cf:"e",n:"Fórum Executivo FenaSaúde",l:"Brasília/DF",p:"ceo",o:"novo",h:"Novo",pr:"",nt:"2026: 06/05, CEOs das seguradoras e autoridades dos três poderes."},
+{m:5,d:"início mai",cf:"e",n:"Congresso ABEA de Auditoria no SUS",l:"Fortaleza/CE (2026)",p:"auditoria",o:"novo",h:"Novo",pr:"",nt:"1º congresso de auditoria no SUS, 06–08/05/2026. Conversa com a frente GOV."},
+{m:5,d:"mai",cf:"e",n:"Health Innova Investors (Hihub)",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Avaliado",pr:"🧊",nt:"Foco em investidores.",u:"https://hihub.tech/InvestorsSummit/"},
+{m:5,d:"mai",cf:"e",n:"Simpósio de Tecnologia em Saúde (Santa Casa SP)",l:"São Paulo/SP",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Mais voltado a hospitais."},
+{m:5,d:"mai",cf:"e",n:"CONTIS – Congresso Brasileiro de Tecnologia e Inovação em Saúde",l:"Santa Catarina",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"💧",nt:""},
+{m:5,d:"18–21/05",cf:"c",n:"Hospitalar 2027",l:"São Paulo/SP (São Paulo Expo)",p:"ceo",o:"lista",h:"Sugerido em 2026",pr:"",nt:"Maior feira de saúde da América Latina; 2026 foi 19–22/05. Foco em prestadores.",u:"https://www.hospitalar.com/"},
+{m:5,d:"fim mai",cf:"e",n:"Rio2C",l:"Rio de Janeiro/RJ",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Ideia: painel no palco de tecnologia e inovação.",u:"https://www.rio2c.com/"},
+{m:6,d:"jun",cf:"s",n:"Jantares regionais BH e RJ [meio/fundo de funil]",l:"BH e RJ",p:"proprio",o:"notion",h:"Feito em 2025",pr:"",nt:"2025: BH 03/06 e RJ 10/06."},
+{m:6,d:"jun",cf:"s",n:"Evento Anti-fraude para operadoras (Natalie Martins)",l:"a definir",p:"auditoria",o:"lista",h:"Não aconteceu em 2025",pr:"🔥",nt:"Contato via consultora que atua com Unimeds."},
+{m:6,d:"14–17/06",cf:"c",n:"Web Summit Rio 2027",l:"Rio de Janeiro/RJ (Riocentro)",p:"tech",o:"lista",h:"Avaliado",pr:"🧊",nt:"Rio segue sede até 2030.",u:"https://rio.websummit.com/"},
+{m:6,d:"21–24/06",cf:"c",n:"HLTH Europe 2027",l:"Amsterdã, Holanda",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Opcional para referências internacionais."},
+{m:6,d:"fim jun",cf:"e",n:"AI Summit Health",l:"São Paulo/SP (InRad)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Edição de saúde do circuito AI Summit. 2026: 24–25/06."},
+{m:6,d:"fim jun",cf:"e",n:"Workshop com a Unidas",l:"São Paulo/SP",p:"proprio",o:"notion",h:"Feito em 2026",pr:"",nt:"23/06/2026."},
+{m:7,d:"início jul",cf:"e",n:"SUESP – Simpósio das Unimeds de SP",l:"Guarujá/SP (Sofitel Jequitimar)",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"41º em 01–04/07/2026, estande N13. ~47% do mercado de Unimeds.",u:"https://www.suesp.com.br/"},
+{m:7,d:"jul",cf:"s",n:"Abramge Healthcare Innovation Day",l:"São Paulo/SP",p:"criticas",o:"lista",h:"Não aconteceu em 2025",pr:"🔥",nt:"Checar retomada com a Abramge."},
+{m:7,d:"jul",cf:"e",n:"Fórum Latino-Americano de Qualidade e Segurança na Saúde",l:"São Paulo/SP (Einstein/IHI)",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Faz sentido com o Audit Copilot mais maduro."},
+{m:7,d:"fim jul",cf:"e",n:"AI Summit Brasil",l:"São Paulo/SP (IPT)",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"2026: 22–23/07 no IPT e 02–03/09 no InRad.",u:"https://aisummit.org.br/"},
+{m:7,d:"fim jul",cf:"e",n:"Fórum sobre Auditoria Médica do CFM",l:"Brasília/DF",p:"auditoria",o:"novo",h:"Novo",pr:"",nt:"II edição em 29/07/2026, com ANS e AMB. Pauta da resolução CFM sobre auditoria."},
+{m:7,d:"fim jul / ago",cf:"e",n:"Congresso Brasileiro de Auditoria Médica (SBAM)",l:"a definir (2026: Porto Alegre)",p:"auditoria",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"2026: 30/07–01/08. Na lista como ‘Auditoria Médica em transformação (Linelly)’."},
+{m:7,d:"fim jul",cf:"e",n:"Congresso Paraibano de Auditoria Médica",l:"João Pessoa/PB",p:"auditoria",o:"lista",h:"Avaliado",pr:"💧",nt:"2025: 31/07–02/08.",u:"https://spampb.org.br/"},
+{m:8,d:"início ago",cf:"e",n:"Saúde Business Fórum (FSB)",l:"a definir",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"2026: 04–07/08. Presidentes e CEOs de hospitais e operadoras."},
+{m:8,d:"início ago",cf:"e",n:"Fórum Saúde Digital",l:"São Paulo/SP",p:"tech",o:"lista",h:"Avaliado",pr:"💧",nt:"17ª edição em 05/08/2026.",u:"https://forumsaudedigital.com.br/"},
+{m:8,d:"início ago",cf:"e",n:"SUEMG – Simpósio das Unimeds de MG e ES",l:"Minas Gerais (2026: Tiradentes)",p:"criticas",o:"lista",h:"Nunca participamos",pr:"🔥",nt:"2026: 05–07/08, edição conjunta MG + ES."},
+{m:8,d:"meados ago",cf:"e",n:"Fórum Saúde (EMS + Esfera Brasil)",l:"Brasília/DF",p:"ceo",o:"novo",h:"Novo",pr:"",nt:"V edição em 19/08/2026, com presidente da ANS e ministros."},
+{m:8,d:"meados ago",cf:"s",n:"Arvo Summit + Arvo Experience",l:"a definir",p:"proprio",o:"slack",h:"Feito em 2026",pr:"",nt:"1ª edição em 20/08/2026 (abertura do Wadih Damous), com jantar pré-Summit em BSB em 04/08."},
+{m:8,d:"fim ago",cf:"e",n:"SUESPAR – Simpósio das Unimeds do PR",l:"Foz do Iguaçu/PR",p:"criticas",o:"lista",h:"Avaliado",pr:"",nt:"32º em 20–23/08/2026, maior público da história, inscrições esgotadas."},
+{m:8,d:"ago/set",cf:"e",n:"FILIS – Fórum Internacional de Lideranças da Saúde (Abramed)",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"Medicina diagnóstica e lideranças.",u:"https://www.abramed.org.br/filis/"},
+{m:8,d:"ago",cf:"e",n:"StartSe Healthtech & Biotech Conference",l:"São Paulo/SP",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:""},
+{m:8,d:"24–27/08",cf:"c",n:"Rio Innovation Week",l:"Rio de Janeiro/RJ (Píer Mauá)",p:"tech",o:"lista",h:"Fabricio em painel (2025)",pr:"🧊",nt:"Data anunciada no encerramento da edição 2026.",u:"https://rioinnovationweek.com.br/"},
+{m:8,d:"ago",cf:"s",n:"Almoço RJ e webinars de conteúdo",l:"RJ / online",p:"proprio",o:"lista",h:"Feito em 2025",pr:"",nt:"Inclui ‘Webinar Despadronização de Códigos’ (14/08/2025) e almoço RJ (27/08/2025)."},
+{m:9,d:"início set",cf:"e",n:"ABEA – Congresso Internacional de Auditoria em Saúde",l:"a definir (2026: Fortaleza)",p:"auditoria",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"VI edição em 01–04/09/2026. Público de enfermeiros auditores.",u:"https://doity.com.br/abea2026"},
+{m:9,d:"início set",cf:"e",n:"MEF – MV Experience Forum",l:"São Paulo/SP (Transamerica Expo)",p:"tech",o:"slack",h:"Sugerido em 2026",pr:"",nt:"Evento da MV com o ministro da Saúde; Rafa trouxe como referência."},
+{m:9,d:"set",cf:"e",n:"São Paulo Tech Week",l:"São Paulo/SP",p:"tech",o:"lista",h:"Fomos em 2025",pr:"",nt:"2025: 08–12/09."},
+{m:9,d:"meados set",cf:"e",n:"HIS – Healthcare Innovation Show",l:"São Paulo/SP (São Paulo Expo)",p:"tech",o:"lista",h:"Fomos em 2024",pr:"💧",nt:"2026: 16–17/09. Em 2024 rendeu leads quentes (Amil, Unimed BH, Care Plus, Hapvida)."},
+{m:9,d:"meados set",cf:"e",n:"AUDHOSP / AUDHASS (Fehosp)",l:"Águas de Lindóia/SP",p:"auditoria",o:"lista",h:"Avaliado, não fomos",pr:"💧",nt:"2026: 15–18/09. Na lista como ‘Como o AUDHOSP e AUDHASS contribuem para a estratégia ESG’.",u:"https://audhosp.com.br/"},
+{m:9,d:"meados set",cf:"e",n:"SUECO – Simpósio das Unimeds do Centro-Oeste e Tocantins",l:"Mato Grosso do Sul (confirmado)",p:"criticas",o:"lista",h:"Avaliado",pr:"🔥",nt:"2026: 16–18/09 em Goiânia. Sede de 2027 já anunciada: MS."},
+{m:9,d:"set",cf:"e",n:"Healthcare Conference",l:"Ribeirão Preto/SP",p:"ceo",o:"lista",h:"Avaliado",pr:"💧",nt:"Foco grande em hospitais."},
+{m:9,d:"fim set",cf:"e",n:"Fórum de Saúde Suplementar do Interior Paulista",l:"Ribeirão Preto/SP",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"1ª edição em 22/09/2026, com ANS e operadoras regionais. Mesmo público do evento Abramge de Campinas."},
+{m:9,d:"fim set",cf:"e",n:"IA Conference Brasil (Alura)",l:"São Paulo/SP",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026: 24/09. Bom para marca empregadora tech."},
+{m:9,d:"set/out",cf:"s",n:"SBIS – Jornada de Saúde Digital",l:"a definir",p:"tech",o:"slack",h:"Convite em 2025",pr:"",nt:"Anna foi convidada para mesa em 2025. O CBIS (congresso da SBIS) é bienal: houve em 2026, próximo em 2028."},
+{m:10,d:"início out",cf:"e",n:"Convenção Nacional Unimed",l:"a definir (2026: Porto Alegre)",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"55ª em 06–09/10/2026 + Arvo Experience POA. Cota G 24 m² ≈ R$280 mil."},
+{m:10,d:"05–07/10",cf:"c",n:"Futurecom 2027",l:"São Paulo/SP (São Paulo Expo)",p:"tech",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Trilhas de IA & Data Economy.",u:"https://www.futurecom.com.br/"},
+{m:10,d:"início out",cf:"e",n:"Fórum Unidas DF",l:"Brasília/DF",p:"criticas",o:"slack",h:"Participamos em 2025 e 2026",pr:"",nt:"Evento fechado, ~250 executivos. Sem estande; vale jantar próprio na véspera."},
+{m:10,d:"início out",cf:"e",n:"Health Innova CEO Summit + Jantar dos CEOs (Hihub)",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Convite para palestra (2025)",pr:"🔥",nt:"Fabricio foi convidado a palestrar em 2025."},
+{m:10,d:"meados out",cf:"e",n:"CONAHP – Congresso Nacional de Hospitais Privados",l:"São Paulo/SP (Transamerica Expo)",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"2026: 14–15/10. Maior congresso de hospitais; foco prestadores.",u:"https://conahp.org.br/"},
+{m:10,d:"meados out",cf:"e",n:"Inteligência Summit (Unimed Ponta Grossa + Inbix)",l:"Ponta Grossa/PR",p:"criticas",o:"slack",h:"Convite em 2026",pr:"",nt:"Convite chegou via Laryssa para 19/10/2026. Sistema Unimed do Paraná, com feira."},
+{m:10,d:"17–20/10",cf:"c",n:"HLTH USA 2027",l:"Las Vegas, EUA",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Opcional para referências internacionais."},
+{m:10,d:"out",cf:"e",n:"Fórum da Saúde Suplementar (CNseg)",l:"Rio de Janeiro/RJ",p:"ceo",o:"lista",h:"Avaliado",pr:"🔥",nt:"",u:"https://eventos.cnseg.org.br/"},
+{m:10,d:"set/out",cf:"e",n:"Brazil Journal: Saúde não tem preço, mas tem custo",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Sugerido",pr:"🔥",nt:"Fabricio trouxe em mai/2026 um evento do Brazil Journal que não estava no radar."},
+{m:10,d:"out",cf:"e",n:"CNN Talks (saúde)",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Avaliado",pr:"🔥",nt:""},
+{m:10,d:"out",cf:"e",n:"Curso UCA Abramge (aula Arvo)",l:"São Paulo/SP",p:"auditoria",o:"lista",h:"Feito em 2024 e 2025",pr:"🔥",nt:"Apoio ao curso de auditores da Universidade Corporativa Abramge (aula da Linelly em 21/10/2025)."},
+{m:10,d:"fim out",cf:"e",n:"Congresso Abramge (30º)",l:"São Paulo/SP",p:"criticas",o:"lista",h:"Adiado de 2026 para 2027",pr:"🔥",nt:"Principal evento de medicinas de grupo. Ideia do time: ir com estande G. 2025: 29/10.",u:"https://congressoabramge.com.br/"},
+{m:10,d:"fim out",cf:"e",n:"Imersão Técnica / Pré-Congresso Abramge",l:"São Paulo/SP",p:"criticas",o:"lista",h:"Feito em 2025",pr:"🔥",nt:"Em 2026 virou a Imersão de Campinas (03/12/2026), com cota de painelista + patrocínio de R$15 mil."},
+{m:10,d:"fim out",cf:"e",n:"Congresso Internacional Unidas",l:"a definir (2026: Recife)",p:"criticas",o:"lista",h:"Participamos em 2026",pr:"🔥",nt:"29º em 28–30/10/2026 + Arvo Experience Recife + Fórum das Autogestões na véspera. Sede 2027 ainda não localizada."},
+{m:10,d:"out (junto aos congressos)",cf:"s",n:"Arvo Experience (edições regionais)",l:"cidades dos grandes congressos",p:"proprio",o:"slack",h:"Feito em 2026",pr:"",nt:"2026: POA (07/10, Unimeds) e Recife (28/10, autogestões)."},
+{m:11,d:"meados nov",cf:"e",n:"FIS Week + Rio Health Forum",l:"Rio de Janeiro/RJ (Marina da Glória)",p:"ceo",o:"lista",h:"Fomos em 2025 e 2026",pr:"💧",nt:"2026: 11–13/11, painelistas da Arvo. O Rio Health Forum é fechado para lideranças.",u:"https://fis.org.br/fisweek"},
+{m:11,d:"fim nov",cf:"e",n:"Congresso Luciane Mandia – Inovação e Tecnologias na Auditoria",l:"a definir",p:"auditoria",o:"lista",h:"Participamos em 2025",pr:"🔥",nt:"2025: 21–23/11 (cota Esmeralda, palestra). Concorrentes (Carefy, Rivio) estavam lá.",u:"https://lrmgcursos.com.br/congresso/"},
+{m:11,d:"nov",cf:"e",n:"Imersão Executivos da Saúde",l:"a definir",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Formato interessante, mas foco em médicos e hospitais."},
+{m:11,d:"fim nov",cf:"e",n:"HSM+",l:"São Paulo/SP",p:"ceo",o:"lista",h:"Avaliado, não fomos",pr:"🧊",nt:"Gestão e liderança; visibilidade do CEO.",u:"https://hsmmais.com.br/"},
+{m:11,d:"fim nov",cf:"s",n:"AI/Data Session no Hub Arvo",l:"São Paulo/SP (Arena Arvo)",p:"proprio",o:"slack",h:"1ª edição em 24/11/2026",pr:"",nt:"Série de eventos técnicos puxada pelo Rafa (marca tech e recrutamento)."},
+{m:11,d:"2º sem",cf:"s",n:"Milken Institute – Future of Health Summit",l:"Washington, EUA",p:"ceo",o:"slack",h:"No radar (2026)",pr:"",nt:"Rafa sugeriu criar POV; não valeria em 2026, mas fica no radar."},
+{m:12,d:"início dez",cf:"e",n:"Simpósio Auditoria: Tecnologia na Gestão da Saúde (Cátia Neres)",l:"a definir",p:"auditoria",o:"lista",h:"Avaliado, não fomos",pr:"🔥",nt:"~100 presencial e 300 online, auditores e gestores. 2025: 06/12."},
+{m:12,d:"início dez",cf:"s",n:"Evento de fim de ano Arvo + clientes de maior valor",l:"BH ou SP",p:"proprio",o:"slack",h:"Ideia (Unimed BH, dez/2026)",pr:"",nt:"Proposta da Tati para virar prática com as contas de maior valor."},
+{m:12,d:"dez",cf:"e",n:"Evento Canoasprev",l:"Porto Alegre/RS",p:"criticas",o:"slack",h:"Fomos em 2025",pr:"",nt:"09/12/2025. Aproveitar a ida para visitar Cabergs, SSI Saúde e Unimed POA."},
+{m:5,d:"início mai",cf:"e",n:"SUERGS – Simpósio das Unimeds do RS",l:"Porto Alegre/RS",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"29ª edição em 07–09/05/2025 (Barra Shopping Sul). Fecha o circuito de simpósios estaduais do Sul."},
+{m:7,d:"fim jul",cf:"e",n:"Fórum Avançar com Sustentabilidade (Unimed do Brasil)",l:"São Paulo/SP (sede Unimed do Brasil)",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"1ª etapa em 22–23/07/2026: lideranças definindo diretrizes do Sistema. Fechado; vale como relacionamento, não como feira."},
+{m:10,d:"fim out",cf:"e",n:"Semana da Transformação em Saúde (Unimed Federação Nordeste Paulista)",l:"Ribeirão Preto/SP",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"2026 terminou em 30/10: ~720 congressistas, 113 Unimeds de 19 estados e 40+ expositores. Inclui OPMED (auditoria de OPME)."},
+{m:4,d:"meados abr",cf:"e",n:"Fórum A Nova Autogestão em Saúde (Unidas)",l:"Brasília/DF",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"2ª edição em 13/04/2026, na véspera do Seminário Unidas. Pauta regulatória (RN 137/RN 649). Dá para combinar com a ida ao Seminário."},
+{m:9,d:"meados set",cf:"e",n:"Fórum Técnico Abramge PR/SC",l:"Curitiba/PR",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"1ª edição em 17/09/2026, com Ministério da Saúde, ANS e Judiciário. Regional da Abramge no Sul."},
+{m:10,d:"início out",cf:"e",n:"Fórum Unidas PA",l:"Belém/PA",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"3ª edição em 01/10/2026. Única porta de entrada encontrada para autogestões do Norte."},
+{m:10,d:"fim out (véspera do Congresso)",cf:"e",n:"Fórum das Autogestões em Saúde (Unidas)",l:"cidade do Congresso Unidas",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"3ª edição em 27/10/2026 em Recife, com diretoria da ANS. Público reduzido (~100), bom para conversa com decisores."},
+{m:0,d:"a confirmar",cf:"s",n:"Fórum Unidas SP",l:"São Paulo/SP",p:"criticas",o:"novo",h:"Novo",pr:"",nt:"7ª edição recente com pauta de inovação e IA na autogestão. Mês da próxima edição não publicado."},
+{m:0,d:"a confirmar",cf:"s",n:"Fórum Unidas SC",l:"Santa Catarina",p:"criticas",o:"slack",h:"Já gerou cliente",pr:"",nt:"O lead da PLASJMU saiu de um evento da Unidas SC (canal #client-plasjmu)."},
+{m:3,d:"15–18/03",cf:"c",n:"NVIDIA GTC 2027",l:"San Jose, EUA",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Maior conferência de IA aplicada do mundo, com trilha de saúde. Caminho para submeter uma talk técnica do time de dados."},
+{m:4,d:"05–08/04",cf:"c",n:"HIMSS27 Global Health Conference",l:"Chicago, EUA (McCormick Place)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Principal evento global de TI em saúde. Referência para produto e possível palco para case de IA em sinistros."},
+{m:4,d:"14–16/04",cf:"c",n:"South Summit Brazil 2027",l:"Porto Alegre/RS (Cais Embarcadero)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Confirmado em Porto Alegre até 2030; a edição 2026 abriu frente de saúde."},
+{m:4,d:"fim abr",cf:"e",n:"Gartner Data & Analytics Summit",l:"São Paulo/SP (Distrito Anhembi)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Local de 2027 confirmado, datas ainda não. 2026 foi no fim de abril. Público de CDOs e CIOs."},
+{m:4,d:"fim abr",cf:"e",n:"TDC Summit São Paulo",l:"São Paulo/SP (Distrito Anhembi)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026: 23–24/04. Comunidade de desenvolvedores; palco para o time de dados e marca empregadora tech."},
+{m:5,d:"05–07/05",cf:"c",n:"Gramado Summit 2027",l:"Gramado/RS (Serra Park)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"10ª edição. Mesma semana do SP Innovation Week (04–07/05): escolher um."},
+{m:8,d:"fim ago",cf:"e",n:"Startup Summit (Sebrae + ACATE)",l:"Florianópolis/SC",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026: 26–28/08, cerca de 10 mil pessoas de 30 países."},
+{m:9,d:"início set",cf:"e",n:"AWS Summit São Paulo",l:"São Paulo/SP",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026: 03/09. Prioridade menor que o Google Cloud Summit, já que a stack da Arvo roda em Google."},
+{m:9,d:"fim set",cf:"e",n:"Google Cloud Summit Brasil",l:"São Paulo/SP",p:"tech",o:"novo",h:"Novo",pr:"",nt:"2026: 23–25/09. Google já é parceiro (evento conjunto ‘Inteligência Nada Artificial’ em 2025) e a stack roda em Vertex AI. Melhor chance de palco como case de IA em saúde."},
+{m:10,d:"out",cf:"e",n:"BRACIS – Brazilian Conference on Intelligent Systems (SBC)",l:"a definir (2026: Cuiabá)",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Principal congresso acadêmico de IA do Brasil; 2026 foi 19–22/10. Caminho para publicar artigo do time de dados e registrar autoria técnica."},
+{m:12,d:"dez",cf:"s",n:"NeurIPS 2027 (workshop Machine Learning for Health)",l:"a definir",p:"tech",o:"novo",h:"Novo",pr:"",nt:"Conferência global de machine learning. O workshop ML4H aceita trabalhos aplicados: ambição de médio prazo para publicação."},
+{m:0,d:"recorrente",cf:"s",n:"Meetups técnicos Arvo + OpenAI (Codex Ambassadors)",l:"São Paulo/SP (Arena Arvo)",p:"proprio",o:"slack",h:"Iniciado em 2026",pr:"",nt:"Rafa entrou no programa Codex Ambassadors da OpenAI; ideia de meetups e hackathons na Arena."},
+{m:0,d:"mensal",cf:"s",n:"Comitê de Inovação e TI da Unidas",l:"online / SP",p:"criticas",o:"slack",h:"Indicação da Vivest",pr:"",nt:"Espaço para apresentar a Arvo como case de parceiro. Sem custo previsto."},
+{m:0,d:"a definir",cf:"s",n:"Evento co-organizado Unidas SP / AFRESP (IA na auditoria)",l:"São Paulo/SP",p:"criticas",o:"slack",h:"Convite em 2025",pr:"",nt:"Convite do diretor executivo da AFRESP para um evento conjunto com cases."},
+{m:0,d:"a definir",cf:"s",n:"Fórum Arvo Gov – Encontro virtual",l:"online",p:"proprio",o:"slack",h:"Lançado em 2026",pr:"",nt:"Agenda do time GOV."},
+{m:0,d:"a definir",cf:"s",n:"Fórum Estratégico Unimed",l:"a definir",p:"criticas",o:"lista",h:"Não ocorreu em 2025",pr:"🔥",nt:"Checar se há edição em 2027.",u:"https://www.forumestrategico.eventosunimeddobrasil.com.br/"},
+{m:0,d:"a definir",cf:"s",n:"Congresso de Gestão e Inovação em Saúde – Unimed",l:"a definir",p:"criticas",o:"lista",h:"Não ocorreu em 2025",pr:"🔥",nt:"Checar se há edição em 2027."}
+];
+const MOD={unimed:"Sistema Unimed",autog:"Autogestões",medgrupo:"Medicina de grupo e seguradoras",audit:"Auditoria em saúde",prest:"Hospitais e prestadores",eco:"Ecossistema / multissegmento"};
+const MODRULES=[
+ [/Unimed|SUESC|SUESP|SUEMG|SUESPAR|SUECO|SUERGS|ConTec|Convenção|Nilo|Inteligência Summit|Semana da Transformação|fim de ano/i,["unimed"]],
+ [/Arvo Experience/i,["unimed","autog"]],
+ [/Unidas|AFRESP|Canoasprev|Casembrapa|Autogestões/i,["autog"]],
+ [/Abramge/i,["medgrupo"]],[/UCA Abramge/i,["medgrupo","audit"]],
+ [/FenaSaúde|CNseg|Interior Paulista/i,["medgrupo"]],[/Interior Paulista|Mar Saúde/i,["unimed","autog","medgrupo"]],
+ [/ABEA|SBAM|Auditoria|AUDHOSP|Paraibano|Mandia|Anti-fraude|Cátia/i,["audit"]],
+ [/Hospitalar|CONAHP|HIS –|Santa Casa|Qualidade e Segurança|Healthcare Conference|Imersão Executivos|Saúde Business|FILIS|MEF/i,["prest"]]
+];
+E.forEach(e=>{const s=new Set();MODRULES.forEach(([r,v])=>{if(r.test(e.n))v.forEach(x=>s.add(x))});if(!s.size)s.add("eco");e.s=[...s]});
+const IARX=/Web Summit|Innovation Week|Futurecom|AI Summit|IA Conference|Tech Week|HIS –|Saúde Digital|MEF|KIC|HLTH|ViVE|AI\/Data|ERP Summit|GTC|HIMSS|South Summit|Gramado|Startup Summit|Gartner|TDC|AWS|Google Cloud|BRACIS|NeurIPS|Codex|SBIS|HIF/i;
+E.forEach(e=>e.ia=IARX.test(e.n));
+// Prazo de fechamento = mês do evento menos a antecedência típica para garantir cota/estande ou aprovar palestra/artigo
+const BIG=/Convenção|ConTec|Congresso Internacional Unidas|Congresso Abramge|Seminário Unidas|Hospitalar|SUESP|SUESC|SUEMG|SUESPAR|SUECO|SUERGS|Semana da Transformação|FIS Week|HIS –|Web Summit|Rio Innovation|São Paulo Innovation/i;
+const LEAD={"HIMSS27 Global Health Conference":9,"NeurIPS 2027 (workshop Machine Learning for Health)":7,"BRACIS – Brazilian Conference on Intelligent Systems (SBC)":6,"NVIDIA GTC 2027":5,"Google Cloud Summit Brasil":4,"AWS Summit São Paulo":4,"Gartner Data & Analytics Summit":4,"TDC Summit São Paulo":3,"Arvo Summit + Arvo Experience":5,"Congresso Luciane Mandia – Inovação e Tecnologias na Auditoria":4};
+const NOW=2026*12+10, MS3=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+E.forEach(e=>{if(!e.m){e.dd=null;e.why="Sem data: definir com o organizador";e.u="later";return}
+ const lead=LEAD[e.n]??(BIG.test(e.n)?5:2);e.dd=Math.max(2027*12+e.m-1-lead,NOW);
+ e.why=LEAD[e.n]&&/HIMSS|NeurIPS|BRACIS|GTC|Google|AWS|Gartner|TDC|Mandia/.test(e.n)?"submissão de palestra/artigo ou cota":(BIG.test(e.n)?"garantir estande e posição":"confirmar participação");
+ const d=e.dd-NOW;e.u=d<=0?"now":d<=2?"soon":d<=5?"mid":"later";
+ e.ddt=e.dd<=NOW&&2027*12+e.m-1-lead<NOW?"já (prazo passou)":MS3[e.dd%12]+"/"+String(Math.floor(e.dd/12)).slice(2)});
+const DUE={now:"Fechar já",soon:"Até jan/27",mid:"Até abr/27",later:"Depois / sem data"};
+const sel={p:new Set(),o:new Set(),c:new Set(),s:new Set(),u:new Set()};let q="",mes="",iaOn=false,urgOn=false;
+function chips(el,map,key,colorFn){Object.entries(map).forEach(([k,v])=>{const b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("aria-pressed","false");b.id="f-"+key+"-"+k;b.innerHTML=(colorFn?`<span class="dot" style="background:var(${colorFn(k)})"></span>`:"")+v.n||v;if(!colorFn)b.textContent=v;b.onclick=()=>{const s=sel[key];s.has(k)?s.delete(k):s.add(k);b.setAttribute("aria-pressed",s.has(k));render()};el.appendChild(b)})}
+chips(document.getElementById("f-pilar"),PILAR,"p",k=>PILAR[k].c);
+chips(document.getElementById("f-due"),DUE,"u");
+chips(document.getElementById("f-mod"),MOD,"s");
+const UB=document.getElementById("f-urg");UB.onclick=()=>{urgOn=!urgOn;UB.setAttribute("aria-pressed",urgOn);render()};
+const IAB=document.getElementById("f-ia");IAB.onclick=()=>{iaOn=!iaOn;IAB.setAttribute("aria-pressed",iaOn);render()};
+chips(document.getElementById("f-origem"),ORIG,"o");
+const MS=document.getElementById("f-mes");MES.forEach((n,i)=>MS.add(new Option(n,String(i+1))));MS.add(new Option("Sem mês fixo","0"));MS.onchange=()=>{mes=MS.value;render()};
+chips(document.getElementById("f-conf"),CONF,"c");
+document.querySelectorAll("#f-pilar .chip").forEach((b,i)=>{const k=Object.keys(PILAR)[i];b.innerHTML=`<span class="dot" style="background:var(${PILAR[k].c})"></span>${PILAR[k].n}`});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value.toLowerCase();render()});
+const norm=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+function filtered(){return E.filter(e=>(!sel.p.size||sel.p.has(e.p))&&(!sel.o.size||sel.o.has(e.o))&&(!sel.c.size||sel.c.has(e.cf))&&(!sel.s.size||e.s.some(x=>sel.s.has(x)))&&(mes===""||String(e.m)===mes)&&(!iaOn||e.ia)&&(!urgOn||e.u==="now"||e.u==="soon")&&(!sel.u.size||sel.u.has(e.u))&&(!q||norm(e.n+" "+e.l+" "+e.nt+" "+e.h).includes(norm(q))))}
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(){const f=filtered(),L=document.getElementById("list");document.getElementById("count").textContent=f.length+" de "+E.length;
+ if(!f.length){L.innerHTML='<p class="empty">Nenhum evento com esses filtros. Limpe a busca ou desmarque um filtro.</p>';return}
+ let h="";[...Array(12).keys()].map(i=>i+1).concat([0]).forEach(m=>{const ev=f.filter(e=>e.m===m);if(!ev.length)return;
+  h+=`<section class="month"><h2>${m?MES[m-1]:"Sem mês fixo"}<small>${ev.length} evento${ev.length>1?"s":""}</small></h2><div class="events">`;
+  ev.forEach(e=>{const P=PILAR[e.p];h+=`<article class="ev${e.u==="now"?" hot":""}" style="--pc:var(${P.c})"><div class="when">${esc(e.d)}<span class="conf ${e.cf}">${CONF[e.cf]}</span>${e.dd!=null?`<span class="due ${e.u}" style="margin-top:6px" title="${e.why}">Fechar ${e.ddt}</span>`:""}</div><div style="min-width:0"><span class="tag">${P.n}${e.ia?" · ★ Vitrine IA":""}</span>${e.u==="now"||e.u==="soon"?` <span class="urg">Urgente</span>`:""}<h3>${e.u?`<a href="${e.u}" target="_blank" rel="noopener">${esc(e.n)}</a>`:esc(e.n)}</h3><div class="meta"><span>${esc(e.l)}</span><span>${e.s.map(x=>MOD[x]).join(" · ")}</span><span>${esc(e.h)}</span><span>Origem: ${ORIG[e.o]}</span><span>${e.pr?"Prioridade "+e.pr:"Prioridade a avaliar"}</span></div></div>${e.nt?`<p class="note">${esc(e.nt)}</p>`:""}</article>`});
+  h+="</div></section>"});L.innerHTML=h}
+function stats(){const c=k=>E.filter(e=>e.cf===k).length,o=k=>E.filter(e=>e.o===k).length;
+ document.getElementById("stats").innerHTML=`<span><b>${E.length}</b>eventos</span><span><b>${c("c")}</b>com data 2027 confirmada</span><span><b>${o("slack")}</b>vindos do Slack</span><span><b>${o("novo")}</b>novos no radar</span><span><b>${E.filter(e=>e.s.includes("unimed")).length}</b>do Sistema Unimed</span><span><b>${E.filter(e=>e.u==="now"||e.u==="soon").length}</b>urgentes para fechar</span><span><b>${E.filter(e=>e.ia).length}</b>vitrines de IA e tecnologia</span><span><b>${E.filter(e=>e.p==="proprio").length}</b>próprios Arvo</span>`}
+function toast(t){const d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2200)}
+document.getElementById("copy").onclick=()=>{const rows=[["Mês","Data 2027","Confiança","Evento","Local","Fechar até","Urgência","Motivo do prazo","Pilar","Vitrine IA","Modelo","Origem","Histórico Arvo","Prioridade","Observações","Link"]];
+ filtered().forEach(e=>rows.push([e.m?MES[e.m-1]:"Sem mês",e.d,CONF[e.cf],e.n,e.l,e.ddt||"a definir",DUE[e.u],e.why,PILAR[e.p].n,e.ia?"Sim":"",e.s.map(x=>MOD[x]).join(" / "),ORIG[e.o],e.h,e.pr||"a avaliar",e.nt,e.u||""]));
+ const tsv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
+ const ok=()=>toast("CSV copiado. Cole no Sheets e use Dados › Dividir texto em colunas.");
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tsv).then(ok).catch(()=>fallback(tsv))}else fallback(tsv)};
+function fallback(t){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");toast("CSV copiado.")}catch(e){toast("Não deu para copiar. Selecione o texto manualmente.")}a.remove()}
+stats();render();
+</script>
+
+</body>
+</html>
